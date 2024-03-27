@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev lzma liblzma-dev jq
 
 # Pyenv 설치
-curl https://pyenv.run | bash   
+curl https://pyenv.run | bash
 
 # Ubuntu 환경에서 Pyenv를 사용할 수 있도록 환경 설정
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -25,22 +25,22 @@ pyenv install --list
 pyenv install 3.9.16
 
 # 설치된 파이썬 버전 확인
-pyenv versions 
+pyenv versions
 
-# PDM 설치 
+# PDM 설치
 curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 
 # PDM을 이용해서 프로젝트 환경 초기화
-pdm init 
+pdm init
 
 # PDM으로 라이브러리 설치할 때 버전 정보를 미리 알아야 할 때
 pip index versions {LIBRARY_NAME}
 
 # PDM을 이용해서 pandas 2.1.4 버전 이상의 버전을 추가할 때
-pdm add “pandas>=2.1.4”
+pdm add “pandas==2.1.4”
 
 # PDM을 이용해서 black 최신 버전을 설치하고, 개발 환경에서만 사용하도록 할 때
-pdm add -dG dev black 
+pdm add -dG dev black
 
 # PDM 가상환경으로 접근하려면
 source .venv/bin/activate
@@ -50,27 +50,27 @@ source .venv/bin/activate
 
 ```yaml
 dependencies = [
-    "bentoml>=1.2.6",
-    "scikit-learn>=1.3.2",
-    "pandas>=2.1.4",
-    "numpy>=1.26.4",
-    "mlflow>=2.11.1",
-    "category-encoders>=2.6.3",
-    "pydantic>=2.6.3",
-    "deepchecks>=0.18.1",
-    "joblib>=1.3.2",
-    "rich>=13.7.1",
-    "seaborn>=0.13.2",
+    "bentoml==1.2.6",
+    "scikit-learn==1.3.2",
+    "pandas==2.1.4",
+    "numpy==1.26.4",
+    "mlflow==2.11.1",
+    "category-encoders==2.6.3",
+    "pydantic==2.6.3",
+    "deepchecks==0.18.1",
+    "joblib==1.3.2",
+    "rich==13.7.1",
+    "seaborn==0.13.2",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "matplotlib>=3.8.3",
-    "pre-commit>=3.6.2",
-    "black>=24.2.0",
-    "isort>=5.13.2",
-    "mypy>=1.9.0",
-    "jupyter>=1.0.0",
+    "matplotlib==3.8.3",
+    "pre-commit==3.6.2",
+    "black==24.2.0",
+    "isort==5.13.2",
+    "mypy==1.9.0",
+    "jupyter==1.0.0",
 ]
 ```
 
